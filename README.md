@@ -6,6 +6,29 @@ Hi - I'm Daniel! I grew up in a small suburb of Cleveland, Ohio and currently li
 I'm also a former Division I endurance athlete - I competed in cross country, indoor track, and outdoor track for the University of Memphis, where I earned 7 All-Conference titles, an All-Regional title in cross country, and was a school record holder in the indoor 5,000 meter run. While I no longer run to stay in shape, I stay active by training and competing in jiujitsu and going on hikes with my dog, Amy. 
 
 ## My Professionl Experience
+**Strike, Data Analyst (April 2022 - June 2023 **
+
+I worked across multiple teams, including Compliance, Fraud Ops, Trust & Safety, and Customer Service. I performed a variety of data-related tasks, including basic data exploration and reporting, data analysis, data visualization, and advanced data modeling. I worked particularly close with the Trust & Safety and Customer Service teams to drive in-app changes that reduced fraud without compromising user experience.
+
+Notable achievement: I worked closely with the Trust & Safety team to implement data-driven features that reduced fraudulent transactions on the platform. Specifically, I helped guide the implementation of "smart" user limits (e.g., automatic adjustment of deposit limits based on user behavior data) and criteria for access to "instant credit" (i.e., immediate access to unsettled deposit funds).
+
+**City Enterprise, Director of Data Science (April 2021 - April 2022) **
+
+Leveraging both internal and external data streams, I helped optimize car dealership inventory across multiple dealerships and created models to forecast sales performance of individual vehicles. I also helped develop, track, and forecast high-level KPIs related to auto sales.
+
+Notable achievement: To guide vehicle purchases at auction, I built ML models to predict the sales performance (days on lot and profit) of individual vehicles with the ultimate goal of increasing inventory turnover and maximizing per-unit profits.
+
+**University of Alabama at Birmingham, Research Assistant (August 2017 - April 2021) **
+
+I worked in the UAB Biomechanics Lab and the Human Neuromodulation Lab while completing my doctoral studies and dissertation. I collected and processed data related to human movement, conducted statistical analysis on large, complex data sets, and presented and published findings. 
+
+Notable achievement: To date, I have 11 peer-reviewed publications and 12 national and international conference presentations from multiple projects completed at UAB. In 2019, I received the BRAIN Initiative Trainee Travel Award from the National Institute of Neurological Disorder and Stroke (NINDS).
+
+**East Carolina University, Research Assistant (August 2015 - May 2017) **
+
+I worked in the ECU Biomechanics Lab while completing my masters studies and thesis research. I collected and processed data related to human movement, conducted statistical analysis on large, complex data sets, and presented and published findings. I also served as a teaching assistant in the ECU Department of Kinesiology. I prepared course material, delivered lectures, led laboratory work, and graded assignments for an introductory kinesiology course (Structural Kinesiology).
+
+Notable achievement: I published findings from my Master's thesis in the Journal of Biomechanics, one of the top peer-reviewed academic journals in my field of study. In 2016, I received the Graduate Student Grant-In-Aid from the American Society of Biomechanics to fund my research. In 2017, I received Travel Awards from AMTI Inc., The American Society of Biomechanics, and the American College of Sports Medicine. I also received American Kinesiology Association’s National Master’s Scholar Award.
 
 ## My Education
 **University of Alabama at Birmingham, Ph.D. (2017 - 2021)**
