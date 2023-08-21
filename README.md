@@ -5,6 +5,10 @@
 * [Biography](#a-bit-about-me)
 * [Professional Experience](#my-professional-experience)
 * [Education](#my-education)
+  * [University of Memhis, B.S. (2011-2015)](#university-of-memphis)
+  * [East Carolina University, M.S. (2015-2017)](#east-carolina-university)
+  * [Unversity of Alabama at Birmingham, Ph.D. (2017-2021)](#university-of-alabama-at-birmingham)
+  * [Continuing Ed (2021 - Present)](#continuing-ed)  
 * [Case Studies](#case-studies)
   * [Case Study #1: Sales Reporting for Gloabal Superstore](#case-study-1---sales-reporting-for-global-superstore) 
 
@@ -49,22 +53,25 @@ I worked in the ECU Biomechanics Lab while completing my masters studies and the
 <br>
 
 ## My Education
-### Google Career Certificate: Data Analytics (2023)
+### Continuing Ed
+#### Google Career Certificate: Data Analytics (2023)
 
-### University of Alabama at Birmingham, Ph.D. (2017 - 2021)
+<br>
 
+### University of Alabama at Birmingham 
+#### Ph.D. Rehabilitation Science (2017 - 2021)
 I worked as a graduate research assistant in the UAB Biomechanics Lab and the Human Neuromodulation Lab while completing my doctor studies and dissertation research. My dissertation, titled "Gait Adaptability with Healthy Aging and Parkinson's Disease," was published in 2021. To date, my work at UAB has resulted in 11 peer-reviewed scientific publications. I graduated with a 4.0 GPA.
 
 <br>
 
-### East Carolina University, M.S. (2015 - 2017)
-
+### East Carolina University 
+#### M.S. Biomechanics (2015 - 2017)
 I worked as a graduate research and teaching assistant in the ECU Biomechanics Lab while completing my master's studies and thesis research. As a research assistant, I completed my thesis, titled "The relationships between physical capacity and biomechanical plasticity in old adults during level and incline walking," in 2017 and published data related to this work in 2018 in the Journal of Biomechanics. As a teaching assistant, I taught 14 sections of an introductory course in the ECU department of Kinesiology and aided in laboratory work for upper level Biomechanics courses. I graduated with a 4.0 GPA.
 
 <br>
 
-### University of Memphis, B.S.Ed. (2011 - 2015)
-
+### University of Memphis 
+#### B.S.Ed. Health and Human Performance (2011 - 2015)
 I was a 4 year member of the cross country, indoor track, and outdoor track teams, was a 7-time All-Conference and 1-time All-Regional athlete, and held the school record for the indoor 5,000 meter run. I also worked as an undergraduate research assistant in the Musculoskeletal Dynamics Lab and the Cardiorespiratory and Metabolic Lab. This work ultimately resulted in 3 peer-reviewed publications. I graduated Suma Cum Laude, with honors and a 3.8 GPA.
 
 <br>
