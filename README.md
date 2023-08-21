@@ -1,13 +1,21 @@
-# Daniel Kuhman 
+# Daniel Kuhman  
+[Personal Website](https://dkuhman.github.io/) || [LinkedIn](https://www.linkedin.com/in/daniel-kuhman/) || [YouTube](https://www.youtube.com/@Daniel-kg3qm/videos)
 
-## Biography
+## Contents
+* [Biography](#a-bit-about-me)
+* [Professional Experience](#my-professional-experience)
+* [Education](#my-education)
+* [Case Studies](#case-studies)
+  * [Case Study #1: Sales Reporting for Gloabal Superstore](#case-study-1---sales-reporting-for-global-superstore) 
+
+## A bit about me
 Hi - I'm Daniel! I grew up in a small suburb of Cleveland, Ohio and currently live in Sioux Falls, South Dakota. I am a trained research scientist with a strong background in analytics and data science. I studied human movement - both biomechanics and motor control - throughout my time as an undergraduate, master's, and doctoral student. Following my successful dissertation defense, I became the Director of Data Science for City Enterprises, where I helped develop and implelement a data-driven approach to inventory optimizion, and vehicle acquisition and sales in the used car market. More recently, I served as a Data Analyst to Strike, a global, peer-to-peer payments app built on Bitcoin and Lightning. Amongst other roles, I served as an embedded analyst to the Trust & Safety and Fraud Ops teams, where I conducted analyses that helped drive in-app features that reduced fraud on the platform without compromising UX.  
 
 I'm also a former Division I endurance athlete - I competed in cross country, indoor track, and outdoor track for the University of Memphis, where I earned 7 All-Conference titles, an All-Regional title in cross country, and was a school record holder in the indoor 5,000 meter run. While I no longer run to stay in shape, I stay active by training and competing in jiujitsu and going on hikes with my dog, Amy. 
 
 <br>
 
-## My Professionl Experience
+## My Professional Experience
 ### Strike, Data Analyst (April 2022 - June 2023
 
 I worked across multiple teams, including Compliance, Fraud Ops, Trust & Safety, and Customer Service. I performed a variety of data-related tasks, including basic data exploration and reporting, data analysis, data visualization, and advanced data modeling. I worked particularly close with the Trust & Safety and Customer Service teams to drive in-app changes that reduced fraud without compromising user experience.
@@ -41,6 +49,8 @@ I worked in the ECU Biomechanics Lab while completing my masters studies and the
 <br>
 
 ## My Education
+### Google Career Certificate: Data Analytics (2023)
+
 ### University of Alabama at Birmingham, Ph.D. (2017 - 2021)
 
 I worked as a graduate research assistant in the UAB Biomechanics Lab and the Human Neuromodulation Lab while completing my doctor studies and dissertation research. My dissertation, titled "Gait Adaptability with Healthy Aging and Parkinson's Disease," was published in 2021. To date, my work at UAB has resulted in 11 peer-reviewed scientific publications. I graduated with a 4.0 GPA.
@@ -60,3 +70,15 @@ I was a 4 year member of the cross country, indoor track, and outdoor track team
 <br>
 
 ## Case Studies
+
+### Case Study 1 - Sales Reporting for Global Superstore
+
+**Skills Demonstrated:**
+
+### Case Study 2 - Title
+
+**Skills Demonstrated:**
+
+### Case Study 3 - Title 
+
+**Skills Demonstrated:**
