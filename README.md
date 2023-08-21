@@ -1,4 +1,11 @@
 # Daniel Kuhman 
+[Personal Website](https://dkuhman.github.io/) || [LinkedIn](https://www.linkedin.com/in/daniel-kuhman/) || [YouTube](https://www.youtube.com/@Daniel-kg3qm/videos)
+
+## Contents
+* [Biography](#biography)
+* [Professional Experience](#my-professional-experience)
+* [Education](#my-education)
+* [Case Studies](#case-studies)
 
 ## Biography
 Hi - I'm Daniel! I grew up in a small suburb of Cleveland, Ohio and currently live in Sioux Falls, South Dakota. I am a trained research scientist with a strong background in analytics and data science. I studied human movement - both biomechanics and motor control - throughout my time as an undergraduate, master's, and doctoral student. Following my successful dissertation defense, I became the Director of Data Science for City Enterprises, where I helped develop and implelement a data-driven approach to inventory optimizion, and vehicle acquisition and sales in the used car market. More recently, I served as a Data Analyst to Strike, a global, peer-to-peer payments app built on Bitcoin and Lightning. Amongst other roles, I served as an embedded analyst to the Trust & Safety and Fraud Ops teams, where I conducted analyses that helped drive in-app features that reduced fraud on the platform without compromising UX.  
@@ -7,7 +14,7 @@ I'm also a former Division I endurance athlete - I competed in cross country, in
 
 <br>
 
-## My Professionl Experience
+## My Professional Experience
 ### Strike, Data Analyst (April 2022 - June 2023
 
 I worked across multiple teams, including Compliance, Fraud Ops, Trust & Safety, and Customer Service. I performed a variety of data-related tasks, including basic data exploration and reporting, data analysis, data visualization, and advanced data modeling. I worked particularly close with the Trust & Safety and Customer Service teams to drive in-app changes that reduced fraud without compromising user experience.
@@ -60,3 +67,15 @@ I was a 4 year member of the cross country, indoor track, and outdoor track team
 <br>
 
 ## Case Studies
+
+### Case Study #1: Sales Reporting for Global Superstore
+
+**Skills Demonstrated:**
+
+### Case Study #2:
+
+**Skills Demonstrated:**
+
+### Case Study #3: 
+
+**Skills Demonstrated:**
