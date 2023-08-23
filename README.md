@@ -116,16 +116,28 @@ I was a 4 year member of the cross country, indoor track, and outdoor track team
 
 ### Case Study 1 - Sales Reporting for Global Superstore
 
+**Description:** Text
+
+**Tools Used:** BigQuery SQL, R, R Markdown
+
 **Skills Demonstrated:** SQL, BigQuery, R, R Markdown, Data Cleaning, Data Visualization
 
 <br>
 
 ### Case Study 2 - AB Testing for Marketing
 
-**Skills Demonstrated:**
+**Description:** Text
+
+**Tools Used:** 
+
+**Skills Demonstrated:** 
 
 <br>
 
 ### Case Study 3 - Customer Acquisition, Retention, and Churn 
 
-**Skills Demonstrated:**
+**Description:** Text
+
+**Tools Used:** 
+
+**Skills Demonstrated:** 
