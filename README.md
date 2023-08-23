@@ -102,9 +102,13 @@ I was a 4 year member of the cross country, indoor track, and outdoor track team
 
 **Skills Demonstrated:**
 
+<br>
+
 ### Case Study 2 - Title
 
 **Skills Demonstrated:**
+
+<br>
 
 ### Case Study 3 - Title 
 
