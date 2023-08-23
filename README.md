@@ -8,7 +8,8 @@
   * [University of Memhis, B.S. (2011-2015)](#university-of-memphis)
   * [East Carolina University, M.S. (2015-2017)](#east-carolina-university)
   * [Unversity of Alabama at Birmingham, Ph.D. (2017-2021)](#university-of-alabama-at-birmingham)
-  * [Continuing Ed (2021 - Present)](#continuing-ed)  
+  * [Google Career Certificate: Data Analytics (August 2023)](#google-career-certificate-data-analytics)
+  * [Google Career Certificate: Business Intelligence (Expected: September 2023)](#google-career-certificate-business-intelligence)  
 * [Case Studies](#case-studies)
   * [Case Study #1: Sales Reporting for Gloabal Superstore](#case-study-1---sales-reporting-for-global-superstore) 
 
@@ -20,7 +21,8 @@ I'm also a former Division I endurance athlete - I competed in cross country, in
 <br>
 
 ## My Professional Experience
-### Strike, Data Analyst (April 2022 - June 2023
+### Strike, Data Analyst 
+#### April 2022 - June 2023
 
 I worked across multiple teams, including Compliance, Fraud Ops, Trust & Safety, and Customer Service. I performed a variety of data-related tasks, including basic data exploration and reporting, data analysis, data visualization, and advanced data modeling. I worked particularly close with the Trust & Safety and Customer Service teams to drive in-app changes that reduced fraud without compromising user experience.
 
@@ -28,7 +30,8 @@ I worked across multiple teams, including Compliance, Fraud Ops, Trust & Safety,
 
 <br>
 
-### City Enterprise, Director of Data Science (April 2021 - April 2022)
+### City Enterprise, Director of Data Science 
+#### April 2021 - April 2022
 
 Leveraging both internal and external data streams, I helped optimize car dealership inventory across multiple dealerships and created models to forecast sales performance of individual vehicles. I also helped develop, track, and forecast high-level KPIs related to auto sales.
 
@@ -36,7 +39,8 @@ Leveraging both internal and external data streams, I helped optimize car dealer
 
 <br>
 
-### University of Alabama at Birmingham, Research Assistant (August 2017 - April 2021)
+### University of Alabama at Birmingham Research Fellow 
+#### August 2017 - April 2021
 
 I worked in the UAB Biomechanics Lab and the Human Neuromodulation Lab while completing my doctoral studies and dissertation. I collected and processed data related to human movement, conducted statistical analysis on large, complex data sets, and presented and published findings. 
 
@@ -44,7 +48,8 @@ I worked in the UAB Biomechanics Lab and the Human Neuromodulation Lab while com
 
 <br>
 
-### East Carolina University, Research Assistant (August 2015 - May 2017)
+### East Carolina University Research Assistant 
+#### August 2015 - May 2017
 
 I worked in the ECU Biomechanics Lab while completing my masters studies and thesis research. I collected and processed data related to human movement, conducted statistical analysis on large, complex data sets, and presented and published findings. I also served as a teaching assistant in the ECU Department of Kinesiology. I prepared course material, delivered lectures, led laboratory work, and graded assignments for an introductory kinesiology course (Structural Kinesiology).
 
@@ -53,12 +58,23 @@ I worked in the ECU Biomechanics Lab while completing my masters studies and the
 <br>
 
 ## My Education
-### Continuing Ed
-#### Google Career Certificate: Data Analytics (2023) (View Certificate [here](professional_certificates/Coursera Certificate - Google Data Analytics.pdf))
-
-
-#### Google Career Certificate: Business Intelligence (In Progress)
+### Google Career Certificate Business Intelligence 
+#### In Progress, expected completion September 2023
 I am currently working to complete this certificate on Coursera; expected completion is September 2023. 
+
+<br>
+
+### Google Career Certificate Data Analytics
+#### August 2023 (View the Certificate [here](https://github.com/dkuhman/analytics_portfolio/blob/main/professional_certificates/Coursera%20Certificate%20-%20Google%20Data%20Analytics.pdf))
+I completed this certificate after ~ 2 months of work. The certificate required me to successfully complete 8 separate courses, all related to data analytics. These courses included:
+* Foundations: Data, Data, Everywhere (View Certificate [Here](url)) 
+* Ask Questions to Make Data-Driven Decisions (View Certificate [Here](url))
+* Prepare Data for Exploration (View Certificate [Here](url))
+* Process Data from Dirty to Clean (View Certificate [Here](url))
+* Analyze Data to Answer Questions (View Certificate [Here](url))
+* Share Data Through the Art of Visualization (View Certificate [Here](url))
+* Data Analysis with R Programming (View Certificate [Here](url))
+* Google Data Analytics Capstone: Complete A Case Study (View Certificate [Here](url))  
 
 <br>
 
