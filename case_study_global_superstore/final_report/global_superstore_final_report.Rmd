@@ -1,0 +1,190 @@
+---
+title: 'Case Study: A Sales Report for Global Superstore'
+author: "Daniel Kuhman"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+## Business Prompt
+Welcome to Global Superstore. We’re an online retailer specializing in office items, including basic supplies, furniture, and tech products. We serve corporate, consumer, and home-based buyers. As our name suggests, we operate globally, with customers from 165 countries.
+
+We’re looking for a one-time report that helps us understand our sales performance. As an entire company, we would like to see sales performance across time, broken down by year. We’re also interested in understanding how our sales vary between global regions. Finally, we’d like to know which of our products drive the biggest profit for the company.
+
+## Available Data
+Data are held on a spreadsheet, saved in csv format. The sheet contains a list of previous items sold.
+
+LINK TO DATA SOURCE: ORDERS
+
+## Deliverables
+We want a one-time report that includes the following items:
+
+* Summarize the company’s yearly sales performance, including:    
+  + New customers
+  + Total number of orders placed
+  + Total number of items sold
+  + Total sales volume ($)
+
+* We store the world region of each sale. We’d like to know the following broken down by sales region:
+  + Number of orders placed
+  + Number of items sold
+  + Total sales volume ($)
+
+* Come up with a method to discover which of our products makes the company the most profit.
+
+---
+
+```{r include=FALSE, results='hide', message=FALSE, warning=FALSE}
+# LOAD LIBRARIES
+library(tidyverse)
+
+# PREP WORKSPACE
+rm(list = ls())
+all_data <- read.csv('C:/Users/danie/Documents/R Scripts/analytics_portfolio/case_study_global_superstore/data/global_superstore_2016_orders.csv')
+
+# REDUCE DATA 
+all_data <- all_data %>% 
+  rename(OrderId = Order.ID,
+         RowId = Row.ID,
+         OrderDate = Order.Date,
+         ShipDate = Ship.Date,
+         ShipMode = Ship.Mode,
+         CustomerId = Customer.ID,
+         CustomerName = Customer.Name,
+         PostalCode = Postal.Code,
+         ProductId = Product.ID,
+         SubCategory = Sub.Category,
+         ProductName = Product.Name,
+         ShippingCost = Shipping.Cost,
+         OrderPriority = Order.Priority) %>% 
+  select(OrderId, Region, OrderDate, CustomerId, Segment,
+         Market, ProductId, Category, SubCategory, ProductName, 
+         Sales, Quantity, Profit)
+
+# FORMAT DATES
+all_data$OrderDate <- as.Date(all_data$OrderDate, '%m/%d/%Y')
+
+# GET ORDER YEAR
+all_data$OrderYear <- format(all_data$OrderDate, '%Y')
+
+# FORMAT DOLLAR AMOUNTS
+all_data$Sales = gsub("\\$", "", all_data$Sales)
+all_data$Sales = gsub("\\,", "", all_data$Sales)
+all_data$Sales = as.numeric(all_data$Sales)
+
+all_data$Profit = gsub("\\$", "", all_data$Profit)
+all_data$Profit = gsub("\\,", "", all_data$Profit)
+all_data$Profit = as.numeric(all_data$Profit)
+
+# FIND NEW CUSTOMERS 
+new_customers <- all_data %>% 
+  group_by(CustomerId) %>% 
+  summarise(FirstOrder = min(OrderDate)) %>% 
+  ungroup() %>% 
+  mutate(cohort = format(FirstOrder, '%Y')) %>% 
+  group_by(cohort) %>% 
+  summarise(NewUsers = n()) %>% 
+  ungroup()
+
+# FIND YEARLY SALES
+yearly_sales <- all_data %>% 
+  group_by(OrderYear) %>% 
+  summarise(OrdersFilled = n(), 
+            ItemsSold = sum(Quantity),
+            VolumeSold = sum(Sales))
+
+# AGGREGATE REGIONAL SALES
+regional_data <- all_data %>% 
+  group_by(Region, OrderYear) %>% 
+  summarise(OrdersFilled = n(), 
+            ItemsSold = sum(Quantity),
+            VolumeSold = sum(Sales)) %>% 
+  ungroup()
+
+```
+
+
+# Yearly Sales Performance
+
+### New customers by year:
+```{r, echo=FALSE}
+ggplot(new_customers, aes(x = cohort, 
+                           y = NewUsers)) +
+    geom_bar(stat = 'identity',
+             color = 'black',
+             fill = '#3366CC') +
+    geom_text(aes(label = NewUsers), 
+              nudge_y = 200) +
+    labs(title = 'New Customers by Year',
+         x = '',
+         y = 'New Customers') +
+    theme_bw() +
+    theme(plot.title = element_text(size = 18, face = 'bold', hjust = 0.5),
+          axis.title.y = element_text(size = 16, face = 'bold', margin = margin(t = 0, r = 15, b = 0, l = 0)),
+          axis.text = element_text(size = 12, color = 'black'))
+```
+
+
+### Number of orders placed by year:
+```{r, echo=FALSE}
+ggplot(yearly_sales, aes(x = OrderYear, 
+                           y = OrdersFilled)) +
+    geom_bar(stat = 'identity',
+             color = 'black',
+             fill = '#3366CC') +
+    geom_text(aes(label = OrdersFilled), 
+              nudge_y = 1000) +
+    labs(title = 'Total Order Count by Year',
+         x = '',
+         y = 'Orders Placed') +
+    theme_bw() +
+    theme(plot.title = element_text(size = 18, face = 'bold', hjust = 0.5),
+          axis.title.y = element_text(size = 16, face = 'bold', margin = margin(t = 0, r = 15, b = 0, l = 0)),
+          axis.text = element_text(size = 12, color = 'black'))
+```
+
+### Number of items sold by year:
+```{r, echo=FALSE}
+ggplot(yearly_sales, aes(x = OrderYear, 
+                           y = ItemsSold)) +
+    geom_bar(stat = 'identity',
+             color = 'black',
+             fill = '#3366CC') +
+    geom_text(aes(label = ItemsSold), 
+              nudge_y = 2000) +
+    labs(title = 'Total Items Sold by Year',
+         x = '',
+         y = 'Items Sold') +
+    theme_bw() +
+    theme(plot.title = element_text(size = 18, face = 'bold', hjust = 0.5),
+          axis.title.y = element_text(size = 16, face = 'bold', margin = margin(t = 0, r = 15, b = 0, l = 0)),
+          axis.text = element_text(size = 12, color = 'black'))
+```
+
+### Total sales revenue ($) by year:
+```{r, echo=FALSE}
+options(scipen = 10)
+ggplot(yearly_sales, aes(x = OrderYear, 
+                           y = VolumeSold)) +
+    geom_bar(stat = 'identity',
+             color = 'black',
+             fill = '#3366CC') +
+    geom_text(aes(label = paste0('$', VolumeSold)), 
+              nudge_y = 100000) +
+    labs(title = 'Total Revenue ($) from Sales by Year',
+         x = '',
+         y = 'Sales Revenue ($)') +
+    theme_bw() +
+    theme(plot.title = element_text(size = 18, face = 'bold', hjust = 0.5),
+          axis.title.y = element_text(size = 16, face = 'bold', margin = margin(t = 0, r = 15, b = 0, l = 0)),
+          axis.text.x = element_text(size = 12, color = 'black'),
+          axis.text.y = element_text(size = 12, color = 'black', angle = 30))
+```
+
+---
+
+# Sales Performance by Region
+To get a better idea of how well each region has performed over time, I will group by ```Region``` and ```OrderYear``` and calculate performance metrics:
+
+--- 
+
+# Most Profitable Products
