@@ -8,8 +8,8 @@
   * [University of Memhis, B.S. (2011-2015)](#university-of-memphis)
   * [East Carolina University, M.S. (2015-2017)](#east-carolina-university)
   * [Unversity of Alabama at Birmingham, Ph.D. (2017-2021)](#university-of-alabama-at-birmingham)
-  * [Google Career Certificate: Data Analytics (August 2023)](#google-career-certificate-data-analytics)
-  * [Google Career Certificate: Business Intelligence (Expected: September 2023)](#google-career-certificate-business-intelligence)  
+  * [Google Career Certificate: Data Analytics (August 2023)](#google-career-certificate-in-data-analytics)
+  * [Google Career Certificate: Business Intelligence (Expected: September 2023)](#google-career-certificate-in-business-intelligence)  
 * [Case Studies](#case-studies)
   * [Case Study #1: Sales Reporting for Gloabal Superstore](#case-study-1---sales-reporting-for-global-superstore)
   * [Case Study #2: AB Testing for Marketing](#case-study-2---ab-testing-for-marketing)
@@ -60,13 +60,13 @@ I worked in the ECU Biomechanics Lab while completing my masters studies and the
 <br>
 
 ## My Education
-### Google Career Certificate Business Intelligence 
+### Google Career Certificate in Business Intelligence 
 #### In Progress, expected completion September 2023
 I am currently working to complete this certificate on Coursera; expected completion is September 2023. 
 
 <br>
 
-### Google Career Certificate Data Analytics
+### Google Career Certificate in Data Analytics
 #### August 2023 (View the Certificate [here](https://github.com/dkuhman/analytics_portfolio/blob/main/professional_certificates/Coursera%20Certificate%20-%20Google%20Data%20Analytics.pdf))
 I completed this certificate after ~ 2 months of work. The certificate required me to successfully complete 8 separate courses, all related to data analytics. These courses included:
 * Foundations: Data, Data, Everywhere (View Certificate [Here](url)) 
