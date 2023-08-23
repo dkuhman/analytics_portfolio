@@ -11,7 +11,9 @@
   * [Google Career Certificate: Data Analytics (August 2023)](#google-career-certificate-data-analytics)
   * [Google Career Certificate: Business Intelligence (Expected: September 2023)](#google-career-certificate-business-intelligence)  
 * [Case Studies](#case-studies)
-  * [Case Study #1: Sales Reporting for Gloabal Superstore](#case-study-1---sales-reporting-for-global-superstore) 
+  * [Case Study #1: Sales Reporting for Gloabal Superstore](#case-study-1---sales-reporting-for-global-superstore)
+  * [Case Study #2: AB Testing for Marketing](#case-study-2---ab-testing-for-marketing)
+  * [Case Study #3: Customer Acquisition, Retention, and Churn](#case-study-3---customer-acquisition-retention-and-churn) 
 
 ## A bit about me
 Hi - I'm Daniel! I grew up in a small suburb of Cleveland, Ohio and currently live in Sioux Falls, South Dakota. I am a trained research scientist with a strong background in analytics and data science. I studied human movement - both biomechanics and motor control - throughout my time as an undergraduate, master's, and doctoral student. Following my successful dissertation defense, I became the Director of Data Science for City Enterprises, where I helped develop and implelement a data-driven approach to inventory optimizion, and vehicle acquisition and sales in the used car market. More recently, I served as a Data Analyst to Strike, a global, peer-to-peer payments app built on Bitcoin and Lightning. Amongst other roles, I served as an embedded analyst to the Trust & Safety and Fraud Ops teams, where I conducted analyses that helped drive in-app features that reduced fraud on the platform without compromising UX.  
@@ -104,12 +106,12 @@ I was a 4 year member of the cross country, indoor track, and outdoor track team
 
 <br>
 
-### Case Study 2 - Title
+### Case Study 2 - AB Testing for Marketing
 
 **Skills Demonstrated:**
 
 <br>
 
-### Case Study 3 - Title 
+### Case Study 3 - Customer Acquisition, Retention, and Churn 
 
 **Skills Demonstrated:**
