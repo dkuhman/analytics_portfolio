@@ -54,7 +54,11 @@ I worked in the ECU Biomechanics Lab while completing my masters studies and the
 
 ## My Education
 ### Continuing Ed
-#### Google Career Certificate: Data Analytics (2023)
+#### Google Career Certificate: Data Analytics (2023) (View Certificate [here](professional_certificates/Coursera Certificate - Google Data Analytics.pdf))
+
+
+#### Google Career Certificate: Business Intelligence (In Progress)
+I am currently working to complete this certificate on Coursera; expected completion is September 2023. 
 
 <br>
 
