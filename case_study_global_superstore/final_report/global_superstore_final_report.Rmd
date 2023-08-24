@@ -5,135 +5,125 @@ date: "`r Sys.Date()`"
 output: html_document
 ---
 
-## Business Prompt
+### Business Prompt
 Welcome to Global Superstore. We’re an online retailer specializing in office items, including basic supplies, furniture, and tech products. We serve corporate, consumer, and home-based buyers. As our name suggests, we operate globally, with customers from 165 countries.
 
-We’re looking for a one-time report that helps us understand our sales performance. As an entire company, we would like to see sales performance across time, broken down by year. We’re also interested in understanding how our sales vary between global regions. Finally, we’d like to know which of our products drive the biggest profit for the company.
+We’re looking for a simple, one-time report that helps us understand our sales performance. As an entire company, we would like to see sales performance across time, broken down by year. We’re also interested in understanding how our sales varied between global regions in our most recent year of sales (2015) relative to the prior year. Specifically, we want to know how sales changed from 2014 to 2015 in each region. Finally, we’d like to know which of our products drive the biggest profit for the company.
 
-## Available Data
-Data are held on a spreadsheet, saved in csv format. The sheet contains a list of previous items sold.
+### Available Data
+Data are held in our BigQuery data warehouse in the ```orders``` table.
 
-LINK TO DATA SOURCE: ORDERS
 
-## Deliverables
+### Deliverables
 We want a one-time report that includes the following items:
 
-* Summarize the company’s yearly sales performance, including:    
-  + New customers
+* Summarize the company’s yearly performance, including:    
+  + Unique customers
   + Total number of orders placed
   + Total number of items sold
   + Total sales volume ($)
 
-* We store the world region of each sale. We’d like to know the following broken down by sales region:
-  + Number of orders placed
-  + Number of items sold
-  + Total sales volume ($)
+* We store the world region of each sale. We’d like to know the following broken down by sales region for 2015:
+  + Percent change in number of orders placed from 2014 to 2015
+  + Percent change in number of items sold from 2014 to 2015
+  + Percent change in total sales volume ($) from 2014 to 2015
 
-* Come up with a method to discover which of our products makes the company the most profit.
+* Provide a list of the top 10 most profitable items
 
 ---
 
-```{r include=FALSE, results='hide', message=FALSE, warning=FALSE}
+### Prepare R Workspace
+To create visualizations for the data the client has requested, I will be using R. Prior to starting the analysis, I need to load libraries and clear the workspace in R:
+
+```{r, include=TRUE, message=FALSE, warning=FALSE}
 # LOAD LIBRARIES
 library(tidyverse)
+library(kableExtra)
 
 # PREP WORKSPACE
 rm(list = ls())
-all_data <- read.csv('C:/Users/danie/Documents/R Scripts/analytics_portfolio/case_study_global_superstore/data/global_superstore_2016_orders.csv')
-
-# REDUCE DATA 
-all_data <- all_data %>% 
-  rename(OrderId = Order.ID,
-         RowId = Row.ID,
-         OrderDate = Order.Date,
-         ShipDate = Ship.Date,
-         ShipMode = Ship.Mode,
-         CustomerId = Customer.ID,
-         CustomerName = Customer.Name,
-         PostalCode = Postal.Code,
-         ProductId = Product.ID,
-         SubCategory = Sub.Category,
-         ProductName = Product.Name,
-         ShippingCost = Shipping.Cost,
-         OrderPriority = Order.Priority) %>% 
-  select(OrderId, Region, OrderDate, CustomerId, Segment,
-         Market, ProductId, Category, SubCategory, ProductName, 
-         Sales, Quantity, Profit)
-
-# FORMAT DATES
-all_data$OrderDate <- as.Date(all_data$OrderDate, '%m/%d/%Y')
-
-# GET ORDER YEAR
-all_data$OrderYear <- format(all_data$OrderDate, '%Y')
-
-# FORMAT DOLLAR AMOUNTS
-all_data$Sales = gsub("\\$", "", all_data$Sales)
-all_data$Sales = gsub("\\,", "", all_data$Sales)
-all_data$Sales = as.numeric(all_data$Sales)
-
-all_data$Profit = gsub("\\$", "", all_data$Profit)
-all_data$Profit = gsub("\\,", "", all_data$Profit)
-all_data$Profit = as.numeric(all_data$Profit)
-
-# FIND NEW CUSTOMERS 
-new_customers <- all_data %>% 
-  group_by(CustomerId) %>% 
-  summarise(FirstOrder = min(OrderDate)) %>% 
-  ungroup() %>% 
-  mutate(cohort = format(FirstOrder, '%Y')) %>% 
-  group_by(cohort) %>% 
-  summarise(NewUsers = n()) %>% 
-  ungroup()
-
-# FIND YEARLY SALES
-yearly_sales <- all_data %>% 
-  group_by(OrderYear) %>% 
-  summarise(OrdersFilled = n(), 
-            ItemsSold = sum(Quantity),
-            VolumeSold = sum(Sales))
-
-# AGGREGATE REGIONAL SALES
-regional_data <- all_data %>% 
-  group_by(Region, OrderYear) %>% 
-  summarise(OrdersFilled = n(), 
-            ItemsSold = sum(Quantity),
-            VolumeSold = sum(Sales)) %>% 
-  ungroup()
 
 ```
 
+---
 
-# Yearly Sales Performance
+# Part 1: Summary of Yearly Sales Performance
 
-### New customers by year:
-```{r, echo=FALSE}
-ggplot(new_customers, aes(x = cohort, 
-                           y = NewUsers)) +
+<br>
+
+### Extracting Data from BigQuery
+The following SQL code will pull the data needed to assess yearly performance:
+    
+    WITH 
+
+    allData AS (
+      SELECT 
+        Order_ID AS OrderId,
+        EXTRACT(YEAR FROM Order_Date) AS OrderYear, --GET YEAR OF ORDER
+        Customer_ID AS CustomerId, --WILL NEED TO FIND UNIQUE CUSTOMER IDS
+        Quantity, --NUMBER OF PRODUCT SOLD IN THE ORDER
+        Quantity * cast(Sales AS NUMERIC) AS TotalPrice
+      FROM `global_superstore.orders` AS orders
+    )
+
+    SELECT 
+      OrderYear,
+      COUNT(DISTINCT CustomerId) AS UniqueCustomers,
+      COUNT(DISTINCT OrderId) AS OrdersPlaced,
+      SUM(Quantity) AS ItemsSold,
+      SUM(TotalPrice) AS SalesRevenue
+    FROM allData
+    GROUP BY OrderYear
+  
+<br>
+
+### Loading Data into R for Visualization
+
+After running the SQL script above in BigQuery, I saved the output to a csv file. Here, I load the csv file into R before creating visualizations:
+
+```{r, message=FALSE, warning=FALSE}
+# LOAD THE DATA AND ASSIGN TO VARIABLE
+yearly_data <- read.csv('C:/Users/danie/Documents/R Scripts/analytics_portfolio/case_study_global_superstore/data/yearly_sales.csv')
+
+# VIEW THE DATA
+yearly_data
+```
+
+<br>
+
+### Data Visualizations
+To show yearly performance in the metrics requested, I will use simple bar charts. To avoid repetition and clutter, I will provide code for the first chart only. The other charts will have the same format but with a different variable on the y-axis. 
+
+```{r, fig.align='center'}
+# BAR PLOT: UNIQUE CUSTOMERS BY YEAR
+ggplot(yearly_data, aes(x = OrderYear,
+                        y = UniqueCustomers)) +
     geom_bar(stat = 'identity',
              color = 'black',
              fill = '#3366CC') +
-    geom_text(aes(label = NewUsers), 
+    geom_text(aes(label = UniqueCustomers),
               nudge_y = 200) +
-    labs(title = 'New Customers by Year',
+    labs(title = 'Unique Customers by Year',
          x = '',
-         y = 'New Customers') +
+         y = 'Unique Customers') +
     theme_bw() +
     theme(plot.title = element_text(size = 18, face = 'bold', hjust = 0.5),
           axis.title.y = element_text(size = 16, face = 'bold', margin = margin(t = 0, r = 15, b = 0, l = 0)),
           axis.text = element_text(size = 12, color = 'black'))
 ```
 
+<br>
 
-### Number of orders placed by year:
-```{r, echo=FALSE}
-ggplot(yearly_sales, aes(x = OrderYear, 
-                           y = OrdersFilled)) +
+```{r, echo=FALSE, fig.align='center'}
+# BAR PLOT: ORDERS BY YEAR
+ggplot(yearly_data, aes(x = OrderYear,
+                        y = OrdersPlaced)) +
     geom_bar(stat = 'identity',
              color = 'black',
              fill = '#3366CC') +
-    geom_text(aes(label = OrdersFilled), 
-              nudge_y = 1000) +
-    labs(title = 'Total Order Count by Year',
+    geom_text(aes(label = OrdersPlaced),
+              nudge_y = 500) +
+    labs(title = 'Total Orders Placed by Year',
          x = '',
          y = 'Orders Placed') +
     theme_bw() +
@@ -142,14 +132,17 @@ ggplot(yearly_sales, aes(x = OrderYear,
           axis.text = element_text(size = 12, color = 'black'))
 ```
 
-### Number of items sold by year:
-```{r, echo=FALSE}
-ggplot(yearly_sales, aes(x = OrderYear, 
-                           y = ItemsSold)) +
+<br>
+
+
+```{r, echo=FALSE, fig.align='center'}
+# BAR PLOT: ITEMS SOLD BY YEAR
+ggplot(yearly_data, aes(x = OrderYear,
+                        y = ItemsSold)) +
     geom_bar(stat = 'identity',
              color = 'black',
              fill = '#3366CC') +
-    geom_text(aes(label = ItemsSold), 
+    geom_text(aes(label = ItemsSold),
               nudge_y = 2000) +
     labs(title = 'Total Items Sold by Year',
          x = '',
@@ -160,19 +153,21 @@ ggplot(yearly_sales, aes(x = OrderYear,
           axis.text = element_text(size = 12, color = 'black'))
 ```
 
-### Total sales revenue ($) by year:
-```{r, echo=FALSE}
+<br>
+
+```{r, echo=FALSE, fig.align='center'}
+# BAR PLOT: REVENUE BY YEAR
 options(scipen = 10)
-ggplot(yearly_sales, aes(x = OrderYear, 
-                           y = VolumeSold)) +
+ggplot(yearly_data, aes(x = OrderYear,
+                        y = SalesRevenue)) +
     geom_bar(stat = 'identity',
              color = 'black',
              fill = '#3366CC') +
-    geom_text(aes(label = paste0('$', VolumeSold)), 
-              nudge_y = 100000) +
-    labs(title = 'Total Revenue ($) from Sales by Year',
+    geom_text(aes(label = paste('$', SalesRevenue)),
+              nudge_y = 1000000) +
+    labs(title = 'Total Revenue from Sales by Year',
          x = '',
-         y = 'Sales Revenue ($)') +
+         y = 'Revenue ($)') +
     theme_bw() +
     theme(plot.title = element_text(size = 18, face = 'bold', hjust = 0.5),
           axis.title.y = element_text(size = 16, face = 'bold', margin = margin(t = 0, r = 15, b = 0, l = 0)),
@@ -182,9 +177,177 @@ ggplot(yearly_sales, aes(x = OrderYear,
 
 ---
 
-# Sales Performance by Region
-To get a better idea of how well each region has performed over time, I will group by ```Region``` and ```OrderYear``` and calculate performance metrics:
+# Part 2: Regional 
 
---- 
+<br>
 
-# Most Profitable Products
+### Extracting Data from BigQuery
+The following SQL code will pull the data needed to assess Regional sales data:
+
+    WITH 
+    
+    allData AS (
+      SELECT 
+        Order_ID AS OrderId,
+        EXTRACT(YEAR FROM Order_Date) AS OrderYear, --GET YEAR OF ORDER
+        Region, --GLOBAL REGION
+        Quantity, --NUMBER OF PRODUCT SOLD IN THE ORDER
+        Quantity * cast(Sales AS NUMERIC) AS TotalPrice
+    FROM `global_superstore.orders` AS orders
+    WHERE EXTRACT(YEAR FROM Order_Date) IN (2014, 2015)
+    ),
+    
+    agData AS (
+      SELECT 
+      Region,
+      OrderYear,
+      COUNT(DISTINCT OrderId) as OrdersPlaced,
+      SUM(Quantity) as ItemsSold,
+      SUM(TotalPrice) as SalesRevenue
+    FROM allData
+    GROUP BY Region, OrderYear
+    ORDER BY Region, OrderYear
+    )
+    
+    SELECT * 
+    FROM (
+      SELECT 
+      Region,
+      ((OrdersPlaced - LAG(OrdersPlaced) OVER(PARTITION BY Region ORDER BY OrderYear)) / LAG(OrdersPlaced) OVER(PARTITION BY Region ORDER BY OrderYear)) * 100 as PercDiffOrdersPlaced,
+      ((ItemsSold - LAG(ItemsSold) OVER(PARTITION BY Region ORDER BY OrderYear)) / LAG(ItemsSold) OVER(PARTITION BY Region ORDER BY OrderYear)) * 100 as PercDiffItemsSold,
+      ((SalesRevenue - LAG(SalesRevenue) OVER(PARTITION BY Region ORDER BY OrderYear)) / LAG(SalesRevenue) OVER(PARTITION BY Region ORDER BY OrderYear)) * 100 as PercSalesRevenue
+    FROM agData) innerData
+    WHERE PercDiffOrdersPlaced IS NOT NULL
+
+<br>
+
+### Loading Data into R for Visualization
+
+After running the SQL script above in BigQuery, I saved the output to a csv file. Here, I load the csv file into R before creating visualizations:
+
+```{r, message=FALSE, warning=FALSE}
+# LOAD THE DATA AND ASSIGN TO VARIABLE
+regional_data <- read.csv('C:/Users/danie/Documents/R Scripts/analytics_portfolio/case_study_global_superstore/data/regional_data.csv')
+
+# VIEW THE DATA
+regional_data
+```
+
+<br>
+
+### Data Visualizations
+To show Regional performance from 2014 to 2015 in the metrics requested, I will use simple, ordered bar charts. Bars will be filled based on value, with positive year over year changes in green and negative changes in red. To avoid repetition and clutter, I will provide code for the first chart only. The other charts will have the same format but with a different variable on the y-axis. 
+
+```{r, echo=TRUE, fig.align='center', fig.width=10}
+# BAR PLOT: CHANGE IN ORDERS BY REGION
+ggplot(regional_data, aes(x = reorder(Region, -PercDiffOrdersPlaced),
+                          y = PercDiffOrdersPlaced,
+                          fill =  PercDiffOrdersPlaced < 0)) +
+    geom_bar(stat = 'identity',
+             color = 'black') +
+    scale_fill_manual(values = c("#006600", "firebrick")) + # THIS WILL FORMAT THE FILL BASED ON VALUE (POS / NEG)
+    labs(title = 'Percent Change in Orders Placed from 2014 to 2015',
+         x = '',
+         y = 'Change in Orders (%)') +
+    theme_bw() +
+    theme(plot.title = element_text(size = 18, face = 'bold', hjust = 0.5),
+          axis.title.y = element_text(size = 16, face = 'bold', margin = margin(t = 0, r = 15, b = 0, l = 0)),
+          axis.text.x = element_text(size = 12, color = 'black', angle = 45, hjust = 1),
+          axis.text.y = element_text(size = 12, color = 'black'),
+          legend.position = 'none')
+```
+
+<br>
+
+```{r, echo=FALSE, fig.align='center', fig.width=10}
+# BAR PLOT: CHANGE IN ITEMS SOLD BY REGION
+ggplot(regional_data, aes(x = reorder(Region, -PercDiffItemsSold),
+                          y = PercDiffItemsSold,
+                          fill =  PercDiffItemsSold < 0)) +
+    geom_bar(stat = 'identity',
+             color = 'black') +
+    scale_fill_manual(values = c("#006600", "firebrick")) +
+    labs(title = 'Percent Change in Total Items Sold from 2014 to 2015',
+         x = '',
+         y = 'Change in Items Sold (%)') +
+    theme_bw() +
+    theme(plot.title = element_text(size = 18, face = 'bold', hjust = 0.5),
+          axis.title.y = element_text(size = 16, face = 'bold', margin = margin(t = 0, r = 15, b = 0, l = 0)),
+          axis.text.x = element_text(size = 12, color = 'black', angle = 45, hjust = 1),
+          axis.text.y = element_text(size = 12, color = 'black'),
+          legend.position = 'none')
+```
+
+<br>
+
+```{r, echo=FALSE, fig.align='center', fig.width=10}
+# BAR PLOT: CHANGE IN REVENUE BY REGION
+ggplot(regional_data, aes(x = reorder(Region, -PercSalesRevenue),
+                          y = PercSalesRevenue,
+                          fill =  PercSalesRevenue < 0)) +
+    geom_bar(stat = 'identity',
+             color = 'black') +
+    scale_fill_manual(values = c("#006600", "firebrick")) +
+    labs(title = 'Percent Change in Sales Revenue from 2014 to 2015',
+         x = '',
+         y = 'Change in Sales Revenue (%)') +
+    theme_bw() +
+    theme(plot.title = element_text(size = 18, face = 'bold', hjust = 0.5),
+          axis.title.y = element_text(size = 16, face = 'bold', margin = margin(t = 0, r = 15, b = 0, l = 0)),
+          axis.text.x = element_text(size = 12, color = 'black', angle = 45, hjust = 1),
+          axis.text.y = element_text(size = 12, color = 'black'),
+          legend.position = 'none')
+```
+
+---
+
+# Part 3: Most Profitable Items
+
+<br>
+
+### Extracting Data from BigQuery
+The following SQL code will pull the data needed to find the top 10 most items ranked by greatest total profit. Note that the ```Product_Name``` field in the original dataset is formatted as ```Product Name, Description``` - we're only interested in the product name, not the description, so I extract the name using ```REGEX_SUBSTR()```. I also pull the total number of each product sold and the average profit per unit.
+
+    SELECT *
+    FROM (
+      SELECT 
+        REGEXP_SUBSTR(Product_Name, r"^(.+?),") AS ProductName,
+        COUNT(*) AS TotalSold,
+        ROUND(AVG(Quantity * cast(Profit as numeric)),2) AS AvgProfit,
+        SUM(Quantity * cast(Profit as numeric)) AS TotalProfit
+      FROM `global_superstore.orders` AS orders
+      GROUP BY REGEXP_SUBSTR(Product_Name, r"^(.+?),")) innerData
+    ORDER BY TotalProfit DESC
+    LIMIT 10
+
+<br>
+
+### Loading Data into R for Visualization
+
+After running the SQL script above in BigQuery, I saved the output to a csv file. Here, I load the csv file into R before creating visualizations:
+
+```{r}
+profit_prods <- read.csv('C:/Users/danie/Documents/R Scripts/analytics_portfolio/case_study_global_superstore/data/profitable_products.csv')
+
+profit_prods
+```
+
+<br>
+
+### Data Visualizations
+
+To show the most profitable products, I will use a simple data table. 
+
+```{r}
+kable(profit_prods,
+      col.names = c('Product',
+                    'Total Number Sold',
+                    'Average Per-Unit Profit (USD)',
+                    'Total Profit (USD)'),
+      align = c('l', 'c', 'c', 'c'),
+      caption = 'Products ranked by total profits generated, all-time') %>% 
+  kable_styling()
+```
+
+
+---
