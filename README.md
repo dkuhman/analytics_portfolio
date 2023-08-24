@@ -79,16 +79,17 @@ I am currently working to complete this certificate on Coursera; expected comple
 <br>
 
 ### Google Career Certificate in Data Analytics
-#### July 2023 - August 2023 (View the Certificate [here](https://github.com/dkuhman/analytics_portfolio/blob/main/professional_certificates/Coursera%20Certificate%20-%20Google%20Data%20Analytics.pdf))
+#### July 2023 - August 2023 
+#### View the Certificate [here](https://github.com/dkuhman/analytics_portfolio/blob/main/professional_certificates/Coursera%20Certificate%20-%20Google%20Data%20Analytics.pdf)
 I completed this certificate on Coursera after ~ 2 months of work. The certificate required me to successfully complete 8 separate courses, all related to data analytics. These courses included:
-* Foundations: Data, Data, Everywhere (View Certificate [Here](url)) 
-* Ask Questions to Make Data-Driven Decisions (View Certificate [Here](url))
-* Prepare Data for Exploration (View Certificate [Here](url))
-* Process Data from Dirty to Clean (View Certificate [Here](url))
-* Analyze Data to Answer Questions (View Certificate [Here](url))
-* Share Data Through the Art of Visualization (View Certificate [Here](url))
-* Data Analysis with R Programming (View Certificate [Here](url))
-* Google Data Analytics Capstone: Complete A Case Study (View Certificate [Here](url))  
+* Foundations: Data, Data, Everywhere 
+* Ask Questions to Make Data-Driven Decisions 
+* Prepare Data for Exploration
+* Process Data from Dirty to Clean 
+* Analyze Data to Answer Questions 
+* Share Data Through the Art of Visualization
+* Data Analysis with R Programming 
+* Google Data Analytics Capstone: Complete A Case Study
 
 <br>
 
