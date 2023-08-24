@@ -116,11 +116,13 @@ I was a 4 year member of the cross country, indoor track, and outdoor track team
 
 ### Case Study 1 - Sales Reporting for Global Superstore
 
-**Description:** Text
+**Path:** 
+
+**Description:** This is an example of a static report to demonstrate my ability to write basic SQL in BigQuery, use R for effective data visualization, and use R Markdown to create static reports with shareable code chunks and visualizations. You can download the [final report](url) and open in a browser to view. 
 
 **Tools Used:** BigQuery SQL, R, R Markdown
 
-**Skills Demonstrated:** SQL, BigQuery, R, R Markdown, Data Cleaning, Data Visualization
+**Skills Demonstrated:** SQL, BigQuery, R (ggplot, kableExtra), R Markdown, Data Cleaning, Data Visualization
 
 <br>
 
