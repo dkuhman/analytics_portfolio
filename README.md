@@ -17,8 +17,6 @@
   * [Google Career Certificate: Business Intelligence (Expected: September 2023)](#google-career-certificate-in-business-intelligence)  
 * [Case Studies](#case-studies)
   * [Case Study #1: Sales Reporting for Gloabal Superstore](#case-study-1---sales-reporting-for-global-superstore)
-  * [Case Study #2: AB Testing for Marketing](#case-study-2---ab-testing-for-marketing)
-  * [Case Study #3: Customer Acquisition, Retention, and Churn](#case-study-3---customer-acquisition-retention-and-churn) 
 
 ## A bit about me
 Hi - I'm Daniel! I grew up in a small suburb of Cleveland, Ohio and currently live in Sioux Falls, South Dakota. I am a trained research scientist with a strong background in analytics and data science. I studied human movement - both biomechanics and motor control - throughout my time as an undergraduate, master's, and doctoral student. Following my successful dissertation defense, I became the Director of Data Science for City Enterprises, where I helped develop and implelement a data-driven approach to inventory optimizion, and vehicle acquisition and sales in the used car market. More recently, I served as a Data Analyst to Strike, a global, peer-to-peer payments app built on Bitcoin and Lightning. Amongst other roles, I served as an embedded analyst to the Trust & Safety and Fraud Ops teams, where I conducted analyses that helped drive in-app features that reduced fraud on the platform without compromising UX.  
@@ -118,28 +116,9 @@ I was a 4 year member of the cross country, indoor track, and outdoor track team
 
 **Path:** [/case_study_global_superstore](https://github.com/dkuhman/analytics_portfolio/tree/main/case_study_global_superstore)
 
-**Description:** This is an example of a static report to demonstrate my ability to write basic SQL in BigQuery, use R for effective data visualization, and use R Markdown to create static reports with shareable code chunks and visualizations. You can download the [final report](url) and open in a browser to view. 
+**Description:** This is an example of a static report to demonstrate my ability to write basic SQL in BigQuery, use R for effective data visualization, and use R Markdown to create static reports with shareable code chunks and visualizations. You can download the [final report](https://github.com/dkuhman/analytics_portfolio/blob/main/case_study_global_superstore/final_report/global_superstore_final_report.html) and open in a browser to view. 
 
 **Tools Used:** BigQuery SQL, R, R Markdown
 
 **Skills Demonstrated:** SQL, BigQuery, R (ggplot, kableExtra), R Markdown, Data Cleaning, Data Visualization
 
-<br>
-
-### Case Study 2 - AB Testing for Marketing
-
-**Description:** Text
-
-**Tools Used:** 
-
-**Skills Demonstrated:** 
-
-<br>
-
-### Case Study 3 - Customer Acquisition, Retention, and Churn 
-
-**Description:** Text
-
-**Tools Used:** 
-
-**Skills Demonstrated:** 
