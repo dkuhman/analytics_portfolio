@@ -117,9 +117,22 @@ I was a 4 year member of the cross country, indoor track, and outdoor track team
 
 **Path:** [/case_study_global_superstore](https://github.com/dkuhman/analytics_portfolio/tree/main/case_study_global_superstore)
 
-**Description:** This is an example of a static report to demonstrate my ability to write basic SQL in BigQuery, use R for effective data visualization, and use R Markdown to create static reports with shareable code chunks and visualizations. You can download the [final report](https://github.com/dkuhman/analytics_portfolio/blob/main/case_study_global_superstore/final_report/global_superstore_final_report.html) and open in a browser to view. 
+**Description:** This is an example of a static report to demonstrate my ability to write basic SQL in BigQuery, use R for effective data visualization, and use R Markdown to create static reports with shareable code chunks and visualizations. You can see the Markdown code for this report [here](https://github.com/dkuhman/analytics_portfolio/blob/main/case_study_global_superstore/final_report/global_superstore_final_report.rmd). You can download the [final report](https://github.com/dkuhman/analytics_portfolio/blob/main/case_study_global_superstore/final_report/global_superstore_final_report.html) and open in a browser to view. 
 
 **Tools Used:** BigQuery SQL, R, R Markdown
 
-**Skills Demonstrated:** SQL, BigQuery, R (ggplot, kableExtra), R Markdown, Data Cleaning, Data Visualization
+**Skills Demonstrated:** 
+
+* SQL
+  * BigQuery
+  * Filter
+  * Aggregate
+  * Window Functions
+  * CTEs
+* R / R Markdown
+  * tidyverse
+  * ggplot2
+  * kableExtra
+* Data Cleaning
+* Data Visualization
 
