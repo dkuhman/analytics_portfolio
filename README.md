@@ -144,7 +144,7 @@ I was a 4 year member of the cross country, indoor track, and outdoor track team
 
 ### Case Study 2 - Google Fiber Customer Satisfaction
 
-**Path:** [/case_study_google_fiber]([https://github.com/dkuhman/analytics_portfolio/tree/main/case_study_global_superstore](https://github.com/dkuhman/analytics_portfolio/tree/main/case_study_google_fiber))
+**Path:** [/case_study_google_fiber](https://github.com/dkuhman/analytics_portfolio/tree/main/case_study_google_fiber)
 
 **Description:** This is an example of a static report to demonstrate my ability to write basic SQL in BigQuery, use R for effective data visualization, and use R Markdown to create static reports with shareable code chunks and visualizations. You can see the final dashboard on [Tableau](https://public.tableau.com/app/profile/daniel.kuhman/viz/B_I_CaseStudy-GoogleFiberCallCenterAnalysis/GoogleFiber-RepeatCallersDashboard#1). 
 
