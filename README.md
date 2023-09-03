@@ -74,7 +74,7 @@ I worked in the Musculoskeletal Dynamics Lab and the Cardiorespiratory and Metab
 ## My Education
 ### Google Career Certificate in Business Intelligence 
 #### August 2023 - Present (expected completion September 2023)
-#### View the Certificate [here]()
+#### View the Certificate [here](https://www.coursera.org/account/accomplishments/professional-cert/DW9GBTMMKA4G)
 I completed this certificate on Coursera. The certificate required me to successfully complete 3 separate courses, all related to Business Intelligence. These courses included:
 * Foundations of Business Intelligence
 * The Path to Insights: Data Models and Pipelines
@@ -84,7 +84,7 @@ I completed this certificate on Coursera. The certificate required me to success
 
 ### Google Career Certificate in Data Analytics
 #### July 2023 - August 2023 
-#### View the Certificate [here](https://github.com/dkuhman/analytics_portfolio/blob/main/professional_certificates/Coursera%20Certificate%20-%20Google%20Data%20Analytics.pdf)
+#### View the Certificate [here](https://www.coursera.org/account/accomplishments/professional-cert/JUGGBJQ7N33V)
 I completed this certificate on Coursera after ~ 2 months of work. The certificate required me to successfully complete 8 separate courses, all related to data analytics. These courses included:
 * Foundations: Data, Data, Everywhere 
 * Ask Questions to Make Data-Driven Decisions 
