@@ -73,7 +73,7 @@ I worked in the Musculoskeletal Dynamics Lab and the Cardiorespiratory and Metab
 
 ## My Education
 ### Google Career Certificate in Business Intelligence 
-#### August 2023 - Present (expected completion September 2023)
+#### August 2023 - September 2023
 #### View the Certificate [here](https://www.coursera.org/account/accomplishments/professional-cert/DW9GBTMMKA4G)
 I completed this certificate on Coursera. The certificate required me to successfully complete 3 separate courses, all related to Business Intelligence. These courses included:
 * Foundations of Business Intelligence
