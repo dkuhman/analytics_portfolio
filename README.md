@@ -74,7 +74,11 @@ I worked in the Musculoskeletal Dynamics Lab and the Cardiorespiratory and Metab
 ## My Education
 ### Google Career Certificate in Business Intelligence 
 #### August 2023 - Present (expected completion September 2023)
-I am currently working to complete this certificate on Coursera; expected completion is September 2023. 
+#### View the Certificate [here]()
+I completed this certificate on Coursera. The certificate required me to successfully complete 3 separate courses, all related to Business Intelligence. These courses included:
+* Foundations of Business Intelligence
+* The Path to Insights: Data Models and Pipelines
+* Decisions, Decisions: Dashboards and Reports
 
 <br>
 
@@ -135,4 +139,24 @@ I was a 4 year member of the cross country, indoor track, and outdoor track team
   * kableExtra
 * Data Cleaning
 * Data Visualization
+
+<br>
+
+### Case Study 2 - Google Fiber Customer Satisfaction
+
+**Path:** [/case_study_google_fiber]([https://github.com/dkuhman/analytics_portfolio/tree/main/case_study_global_superstore](https://github.com/dkuhman/analytics_portfolio/tree/main/case_study_google_fiber))
+
+**Description:** This is an example of a static report to demonstrate my ability to write basic SQL in BigQuery, use R for effective data visualization, and use R Markdown to create static reports with shareable code chunks and visualizations. You can see the final dashboard on [Tableau](https://public.tableau.com/app/profile/daniel.kuhman/viz/B_I_CaseStudy-GoogleFiberCallCenterAnalysis/GoogleFiber-RepeatCallersDashboard#1). 
+
+**Tools Used:** BigQuery SQL, Tableau
+
+**Skills Demonstrated:** 
+
+* SQL
+  * BigQuery
+  * Union
+* Tableau
+  * Filter
+  * Calculate Field
+  * Data Visualization
 
